@@ -53,6 +53,16 @@
     <servlet-class>com.yuimorii.servlet.ContextServlet</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>ContextServlet1</servlet-name>
+        <servlet-class>com.yuimorii.servlet.ContextServlet1</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ContextServlet2</servlet-name>
+        <servlet-class>com.yuimorii.servlet.ContextServlet2</servlet-class>
+    </servlet>
+
+
 
     <!--servlet-mapping标签给servlet程序配置访问地址-->
         <servlet-mapping>
@@ -76,6 +86,14 @@
         <servlet-mapping>
             <servlet-name>ContextServlet</servlet-name>
             <url-pattern>/ContextServlet</url-pattern>
+        </servlet-mapping>
+        <servlet-mapping>
+            <servlet-name>ContextServlet1</servlet-name>
+            <url-pattern>/ContextServlet1</url-pattern>
+        </servlet-mapping>
+        <servlet-mapping>
+            <servlet-name>ContextServlet2</servlet-name>
+            <url-pattern>/ContextServlet2</url-pattern>
         </servlet-mapping>
 
 
