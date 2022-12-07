@@ -3,10 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Javaweb.iml" filepath="$PROJECT_DIR$/.idea/Javaweb.iml" />
-      <module fileurl="file://$PROJECT_DIR$/05-XML&amp; Tomcat/Untitled/Untitled.iml" filepath="$PROJECT_DIR$/05-XML&amp; Tomcat/Untitled/Untitled.iml" />
-      <module fileurl="file://$PROJECT_DIR$/05_book_static/main/main.iml" filepath="$PROJECT_DIR$/05_book_static/main/main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/com.yuimorii/servlet/servlet.iml" filepath="$PROJECT_DIR$/com.yuimorii/servlet/servlet.iml" />
-      <module fileurl="file://$PROJECT_DIR$/06_Servlet/servletpart01/servletpart01.iml" filepath="$PROJECT_DIR$/06_Servlet/servletpart01/servletpart01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_06_Servlet/_06_Servlet.iml" filepath="$PROJECT_DIR$/_06_Servlet/_06_Servlet.iml" />
     </modules>
   </component>
 </project>
