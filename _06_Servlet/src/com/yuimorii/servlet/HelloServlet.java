@@ -8,18 +8,18 @@ public class HelloServlet implements Servlet {
 
     }
     public HelloServlet() {
-        System.out.println("1 构造器方法");
+        System.out.println("1 Constructor method");
     }
 
 
     @Override
     public void init(ServletConfig servletConfig) throws ServletException {
-        System.out.println("2 init初始化方法");
+        System.out.println("2 init");
         //1、可以获取Servlet程序的别名servlet-name的值
-        System.out.println("HelloServlet程序的别名是:" + servletConfig.getServletName());
+        System.out.println("HelloServlet:" + servletConfig.getServletName());
         //2、获取初始化参数init-param
-        System.out.println("初始化参数username的值是：" + servletConfig.getInitParameter("username"));
-        System.out.println("初始化参数url的值是;" + servletConfig.getInitParameter("url"));
+        System.out.println("The value of the initialization parameter username is：" + servletConfig.getInitParameter("username"));
+        System.out.println("The value of the initialization parameter url is;" + servletConfig.getInitParameter("url"));
         //3、获取ServletContext对象
         System.out.println(servletConfig.getServletContext());
 

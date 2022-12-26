@@ -11,13 +11,15 @@ import java.io.IOException;
 public class HelloServlet2 extends HttpServlet {
     @Override
     public void init(ServletConfig config) throws ServletException {
-        //必須要調用init方法
+        //The init method must be called
         super.init(config);
-        System.out.println("重写了init初始化方法,做了一些工作");
+        System.out.println("Rewrote the init initialization method");
+
+
     }
 
     /**
-     * doGet（）在get请求的时候调用
+     * doGet（）=> Called on a get request
      * @param req
      * @param resp
      * @throws ServletException
@@ -25,16 +27,16 @@ public class HelloServlet2 extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("HelloServlet2 的doGet方法");
+        System.out.println("HelloServlet2 doGet method");
         ServletConfig servletConfig = getServletConfig();
         System.out.println(servletConfig);
 
-        //2、获取初始化参数init-param
-        System.out.println("初始化参数username的值是;" + servletConfig.getInitParameter("username"));
-        System.out.println("初始化参数url的值是;" + servletConfig.getInitParameter("url"));
+        //2. Get the initialization parameter init-param
+        System.out.println("The value of the initialization parameter username is;" + servletConfig.getInitParameter("username"));
+        System.out.println("The value of the initialization parameter url is;" + servletConfig.getInitParameter("url"));
     }
     /**
-     * doPost（）在post请求的时候调用
+     * doPost（）=> Called on a get request
      * @param req
      * @param resp
      * @throws ServletException
@@ -42,7 +44,6 @@ public class HelloServlet2 extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("HelloServlet2 的doPost方法");
+        System.out.println("HelloServlet2 doPost method");
     }
 }
-
