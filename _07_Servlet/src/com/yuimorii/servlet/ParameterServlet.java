@@ -20,6 +20,8 @@ public class ParameterServlet extends HttpServlet {
         username = new String(username.getBytes("iso-8859-1"), "UTF-8");
 
         String password = req.getParameter("password");
+
+        //以數組形式儲存
         String[] hobby = req.getParameterValues("hobby");
 
         System.out.println("用户名：" + username);
