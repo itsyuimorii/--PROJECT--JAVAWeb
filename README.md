@@ -103,7 +103,7 @@ version="4.0">
 
 ##### c) url address to the Servlet program access
 
-![- image-20221225150214855](/Users/yuimorii/Documents/GitHub/Javaweb/img/- image-20221225150214855.png)
+![- image-20221225150214855](https://github.com/itsyuimorii/Javaweb/blob/main/img/-%20image-20221225150214855.png)
 
 ###  3. The life cycle of Servlet
 
@@ -122,7 +122,7 @@ version="4.0">
 - Initialization phase:
 
 
- ![Frame 6](/Users/yuimorii/Documents/GitHub/Javaweb/img/Frame 6.png)
+ ![Frame 6](https://github.com/itsyuimorii/Javaweb/blob/main/img/Frame%206.png)
 
 - When the client sends an HTTP request to the Servlet container to access the Servlet, the Servlet container first parses the request and checks whether the Servlet object is already in memory, if so, the Servlet object is used directly; if not, the Servlet instance object is created, and then by calling the init() method to complete the Servlet initialization. Note that in the entire life cycle of the Servlet, **its init() method is called only once. **
 
@@ -515,12 +515,16 @@ Get the initialization parameters of the Web application
 
 - Read the resource files under the Web application
 	- Actual development sometimes need to read some resource files in the Web application, for this reason ServletContext interface defines a number of methods to read Web resources, these methods rely on the Servlet container to achieve, according to the path of the resource file relative to the Web application, return the IO stream associated with the resource file, the absolute path of the resource file, etc.
+	
+	  
 | method                            | description                                                  |
 | --------------------------------- | ------------------------------------------------------------ |
 | Set getResourcePaths(String path) | return a Set collection, the set contains the path specified by path subdirectory names and file names but does not contain subdirectory file names, path with a slash / to indicate the root directory of the Web application |
 |  String getRealPath(String path)    |   Return the real path of the resource file on the server file system, the parameter path indicates the path of the resource file relative to the web application, starting with a slash / indicates the root directory of the web application, if the virtual path cannot be converted to real path then return null  |
 |URL getResource(String path | Returns a URL object mapped to a resource file, the parameter must start with a slash / to indicate the root directory of the web application |
 | InputStream getResourceAsStream(String path) |Returns the InputStream object mapped to a resource file, with the same rules for passing path as getResource()|
+
+
 
 > Summary: The path in these four methods is actually the path relative to the web application, starting with a slash
 
