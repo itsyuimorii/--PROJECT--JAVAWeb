@@ -219,8 +219,9 @@ Generally in the actual project development, using the inheritance of the HttpSe
 | User processing of HTTP requests of type GETl | protected void doGet(HttpServletRequestreq,HttpServletResponse resp) |
 | For handling POST type HTTP requests          | protected void doPost(HttpServletRequestreq,HttpServletResponse resp) |
 | For handling PUT type HTTP requests           | protected void doPut(HttpServletRequestreq,HttpServletResponse resp) |
-|                                               |                                                              |
-|                                               | ![(/Users/yuimorii/Documents/GitHub/Javaweb/img/Screen Shot 2022-12-25 at 8.55.09 PM.png)![Screen Shot 2022-12-25 at 9.00.55 PM](/Users/yuimorii/Documents/GitHub/Javaweb/img/Screen Shot 2022-12-25 at 9.00.55 PM.png) |
+
+![Screen Shot 2022-12-25 at 9.00.55 PM](https://github.com/itsyuimorii/Javaweb/blob/main/img/Screen%20Shot%202022-12-25%20at%209.00.55%20PM.png)
+
 
 ```java
 //HelloServlet2
@@ -685,25 +686,15 @@ resp.setHeader("Refresh", "3;URL=/virtual directory/demo.html");
 
 ### 9. File Download
 
+[Example-code](https://github.com/itsyuimorii/Javaweb/blob/main/_07_Servlet/src/com/yuimorii/servlet/ServletDownloadDemo.java)
+
 Implement the function of downloading a file in the browser with the following steps.
-
 - Create a byte input stream and associate it with the file to be read
-
 - Set the types supported by the response message header
-
 - Set the response message header to open the resource as a download
-
 - Get the byte output stream object through the response object
-
 - Read and write in a loop
-
 - Release the resource
-
-  - Example-code
-  
-    
-  
-  
 
 # Section 6.  HttpServletRequest
 
@@ -865,7 +856,6 @@ Servlets can jump between each other, if the function of a Servlet can not handl
 ##### Example  
 
 https://github.com/itsyuimorii/Javaweb/blob/main/_07_Servlet/src/com/yuimorii/servlet/Servlet2.java
-
 https://github.com/itsyuimorii/Javaweb/blob/main/_07_Servlet/src/com/yuimorii/servlet/Servlet1.java
 
 **Related methods**
@@ -884,7 +874,6 @@ https://github.com/itsyuimorii/Javaweb/blob/main/_07_Servlet/src/com/yuimorii/se
 #### [‼️Servlet – forward() and sendRedirect() Method With Example](https://www.geeksforgeeks.org/servlet-forward-and-sendredirect-method-with-example/)
 
 ### 5. Streaming objects to obtain data
-
 - **BufferedReader getReader(),** the method to obtain a character input buffer stream
 - **ServletInputStream getInputStream(),** the method to get a byte input stream
 - Note that the data read by these two methods comes from the request body, so the GET method cannot get the data, while the POST method can
