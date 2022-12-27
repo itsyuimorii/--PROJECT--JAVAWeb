@@ -1,56 +1,8 @@
-<!-- vscode-markdown-toc -->
-
-    * 1. [1. Overview](#Overview)
-    	* 1.1. [a) What is Servlet?](#aWhatisServlet)
-    	* 1.2. [b) Manual implementation of Servlet program](#bManualimplementationofServletprogram)
-    * 2. [2. Servlet interface](#Servletinterface)
-    * 3. [3. The life cycle of Servlet](#ThelifecycleofServlet)
-    * 4. [4. Servlet configure](#Servletconfigure)
-    * 5. [5. Implementing Servlet programs by inheriting HttpServlet](#ImplementingServletprogramsbyinheritingHttpServlet)
-    * 6. [6. Servlet creation timing](#Servletcreationtiming)
-    * 7. [1. Overview](#Overview-1)
-    * 8. [2. ServletConfig configuration](#ServletConfigconfiguration)
-    * 9. [ServletConfig function](#ServletConfigfunction)
-    * 10. [1. Overview](#Overview-1)
-    	* 10.1. [a) What is ServletContext?](#aWhatisServletContext)
-    	* 10.2. [b) ServletContext class of the four roles](#bServletContextclassofthefourroles)
-    * 11. [2. ServletContext configuration](#ServletContextconfiguration)
-    * 12. [3. ServletContext configuration](#ServletContextconfiguration-1)
-    * 13. [1. What is HTTP?](#WhatisHTTP)
-    * 14. [2. HTTP get/post request style](#HTTPgetpostrequeststyle)
-    * 15. [3. HTTP protocol format of the response](#HTTPprotocolformatoftheresponse)
-    * 16. [1. Overview](#Overview-1)
-    * 17. [2. HTTP Response Status Code Definition](#HTTPResponseStatusCodeDefinition)
-    * 18. [3. Methods for sending status codes](#Methodsforsendingstatuscodes)
-    * 19. [4. methods for sending response message header](#methodsforsendingresponsemessageheader)
-    * 20. [5. Methods for sending the response message body](#Methodsforsendingtheresponsemessagebody)
-    * 21. [6. Request redirection](#Requestredirection)
-    * 22. [7. Set the cache time](#Setthecachetime)
-    * 23. [8. Set timer refresh](#Settimerrefresh)
-    * 24. [9. File Download](#FileDownload)
-    * 25. [10. How to send data back to the client](#Howtosenddatabacktotheclient)
-    * 26. [1. Overview](#Overview-1)
-    * 27. [2. Related methods](#Relatedmethods)
-    	* 27.1. [1. Get request line information](#Getrequestlineinformation)
-    	* 27.2. [2. Methods related to obtaining request header information](#Methodsrelatedtoobtainingrequestheaderinformation)
-    	* 27.3. [3. Methods related to getting request parameters](#Methodsrelatedtogettingrequestparameters)
-    * 28. [3.HttpServletRequest share data](#HttpServletRequestsharedata)
-    * 29. [4.Request.getRequestDispatcher("/test.jsp").forword(request,response)](#Request.getRequestDispatchertest.jsp.forwordrequestresponse)
-    	* 29.1. [[‼️RequestDispatcher.forward vs Redirection](https://segmentfault.com/a/1190000038375532)](#RequestDispatcher.forwardvsRedirectionhttps:segmentfault.coma1190000038375532)
-    	* 29.2. [[‼️Servlet – forward() and sendRedirect() Method With Example](https://www.geeksforgeeks.org/servlet-forward-and-sendredirect-method-with-example/)](#ServletforwardandsendRedirectMethodWithExamplehttps:www.geeksforgeeks.orgservlet-forward-and-sendredirect-method-with-example)
-    * 30. [5. Streaming objects to obtain data](#Streamingobjectstoobtaindata)
-
-<!-- vscode-markdown-toc-config
-	numbering=true
-	autoSave=true
-	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc -->
-
 # 🚀Section 1.
 
-### 1. <a name='Overview'></a>1. Overview
+### 1. 1. Overview
 
-#### 1.1. <a name='aWhatisServlet'></a>a) What is Servlet?
+#### 1.1. a) What is Servlet?
 
 - Servlet is an application running on the web server side, written in Java language
 - Servlet object mainly encapsulates the processing of HTTP requests, its operation requires the support of the Servlet container (such as Tomcat)
@@ -58,13 +10,13 @@
 
 > As shown below, Servlet requests will first be received by HTTP servers (such as Apache), HTTP servers are only responsible for static HTML interface parsing, while Servlet requests are forwarded to the Servlet container, which will call the corresponding Servlet according to the request path and the mapping relationship between Servlets, which will return the processing results to the Servlet container and transmit the response to the client through the HTTP server
 
-#### 1.2. <a name='bManualimplementationofServletprogram'></a>b) Manual implementation of Servlet program
+#### 1.2. b) Manual implementation of Servlet program
 
 1.  Write a class to implement the Servlet interface
 2.  Implement service methods, process requests, and respond to data
 3.  Go to web.xml to configure the servlet program's access address.
 
-### 2. <a name='Servletinterface'></a>2. Servlet interface
+### 2. 2. Servlet interface
 
 > Servlet is a class that implements the Servlet interface, which is created and called by the Web server to receive and respond to user requests, with five abstract methods defined in the Servlet interface
 
@@ -153,7 +105,7 @@ version="4.0">
 
 ![- image-20221225150214855](https://github.com/itsyuimorii/Javaweb/blob/main/img/-%20image-20221225150214855.png)
 
-### 3. <a name='ThelifecycleofServlet'></a>3. The life cycle of Servlet
+### 3. 3. The life cycle of Servlet
 
 [the entire life cycle of a servlet]: https://www.geeksforgeeks.org/life-cycle-of-a-servlet/
 
@@ -402,7 +354,7 @@ Modify the timing of Servlet creation: add <load-on-startup></load-on-startup> t
 
 # 🚀Section 2.ServletConfig
 
-### 7. <a name='Overview-1'></a>1. Overview
+### 7. Overview
 
 - ServletConfig is an **interface**
 
@@ -410,7 +362,7 @@ Modify the timing of Servlet creation: add <load-on-startup></load-on-startup> t
 
 - The configuration information encapsulated in ServletConfig is in the form of key-value pairsa) ServletConfig class three major roles
 
-### 8. <a name='ServletConfigconfiguration'></a>2. ServletConfig configuration
+### 8. ServletConfig configuration
 
 | Method                               | description                                                                |
 | ------------------------------------ | -------------------------------------------------------------------------- |
@@ -478,9 +430,9 @@ public class HelloServlet2 extends HttpServlet {
 
 # 🚀Section 3.ServletContext
 
-### 10. <a name='Overview-1'></a>1. Overview
+### 10.  1. Overview
 
-#### 10.1. <a name='aWhatisServletContext'></a>a) What is ServletContext?
+#### 10.1.  a) What is ServletContext?
 
 - ServletContext is an interface
 
@@ -501,7 +453,7 @@ public class HelloServlet2 extends HttpServlet {
 | Put()          | Get()          | Remove()          |
 | setAttribute() | GetAttribute() | RemoveAttribute() |
 
-#### 10.2. <a name='bServletContextclassofthefourroles'></a>b) ServletContext class of the four roles
+#### 10.2.  b) ServletContext class of the four roles
 
 - to get the **web.xml configuration** of the context parameters context-param
 - to get the current project path, the format: **/ project path**
@@ -530,7 +482,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 }
 ```
 
-### 11. <a name='ServletContextconfiguration'></a>2. ServletContext configuration
+### 11. 2. ServletContext configuration
 
 - The <web-app> tag in the web.xml file is configured by the <context-param> tag, which has two sub-tags
 - Sub-tag <param-name> indicates the key of the global initialization parameter
@@ -547,7 +499,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 </context-param>
 ```
 
-### 12. <a name='ServletContextconfiguration-1'></a>3. ServletContext configuration
+### 12.  3. ServletContext configuration
 
 Get the initialization parameters of the Web application
 
@@ -577,11 +529,11 @@ Get the initialization parameters of the Web application
 
 # 🚀Section 4: HTTP protocols
 
-### 13. <a name='WhatisHTTP'></a>1. What is HTTP?
+### 13. 1. What is HTTP?
 
 The [Hypertext Transfer Protocol](https://reqbin.com/Article/HttpProtocol) (HTTP) is the core protocol of the World Wide Web. It is designed to support communication between a browser or an application and servers. HTTP protocol is used to send information in a format that both the client and the server can understand. HTTP works as a stateless request-response protocol between the client and the web server.
 
-### 14. <a name='HTTPgetpostrequeststyle'></a>2. HTTP get/post request style
+### 14.  2. HTTP get/post request style
 
 - Request line:
 
@@ -646,11 +598,11 @@ Host: reqbin.com
   - **url** encoding is to replace the content parameter as: %xx%xx
   - **multipart/form-data**: indicates that the data is submitted to the server in the form of multipart (submitted as a stream, with sub-upload)
 
-### 15. <a name='HTTPprotocolformatoftheresponse'></a>3. HTTP protocol format of the response
+### 15.  3. HTTP protocol format of the response
 
 # 🚀Section 5. HttpServletResponse
 
-### 16. <a name='Overview-1'></a>1. Overview
+### 16.  1. Overview
 
 - HttpServletResponse interface inherits from ServletResponse interface
 - Used to encapsulate the HTTP response message
@@ -664,7 +616,7 @@ Host: reqbin.com
 > CharacterStream
 > getWriter(); commonly used for passing back strings (commonly used)
 
-### 17. <a name='HTTPResponseStatusCodeDefinition'></a>2. HTTP Response Status Code Definition
+### 17.  2. HTTP Response Status Code Definition
 
 https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/302
 
@@ -679,7 +631,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/302
 | 405    | **the server knows the request method, but the target resource doesn't support this method**                                                                                                                         |
 |        |                                                                                                                                                                                                                      |
 
-### 18. <a name='Methodsforsendingstatuscodes'></a>3. Methods for sending status codes
+### 18.  3. Methods for sending status codes
 
 - void setStatus(int status) , set the status code of the response message and generate the response status line
 
@@ -687,7 +639,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/302
 
 - void sendError(int sc,String message) , set the status code of the error and also send an error message to the client, which contains the content of message
 
-### 19. <a name='methodsforsendingresponsemessageheader'></a>4. methods for sending response message header
+### 19. 4. methods for sending response message header
 
 - void addHeader(String name,String value) , set the value of the name field specified in the response header, it will overwrite the original value of the name field
 
@@ -697,7 +649,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/302
 
 - void setContentType(String type) , set the type of the response content, that is, the value of Content-Type, and the response content for the text type can also specify the character set encoding, such as text/html;charset=UTF-8
 
-### 20. <a name='Methodsforsendingtheresponsemessagebody'></a>5. Methods for sending the response message body
+### 20. 5. Methods for sending the response message body
 
 - ServletOutputStream getOutputStream(), used to get the byte output stream object
 
@@ -705,7 +657,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/302
 
 - Note: When using these output streams may appear garbled, so you can use resp.setContentType("text/html;UTF-8"); to set the character set encoding, used to solve the problem of garbled code
 
-### 21. <a name='Requestredirection'></a>6. Request redirection
+### 21. 6. Request redirection
 
 Request redirection means that after **the server receives a request from the client, it may not be able to access the resource specified in the request due to certain conditions.**Let the client to access another specified resource
 
@@ -731,7 +683,7 @@ Second option for redirects (recommended):
 resp.sendRedirect("http://localhost:8080");
 ```
 
-### 22. <a name='Setthecachetime'></a>7. Set the cache time
+### 22. 7. Set the cache time
 
 For data that does not change frequently, you can **set the cache time to reduce frequent visits to the server and improve efficiency**
 Use **void setDateHeader(String name,long time)** method to set the response header
@@ -741,7 +693,7 @@ Example:
 resp.setDateHeader("Expires",System.currentTimeMills+16060*1000), set the cache time to 1 hour
 ```
 
-### 23. <a name='Settimerrefresh'></a>8. Set timer refresh
+### 23. 8. Set timer refresh
 
 Timed refresh is to set a certain time to jump to a certain page automatically
 **Use void setHeader(String name,String value) method**
@@ -751,7 +703,7 @@ Example:
 resp.setHeader("Refresh", "3;URL=/virtual directory/demo.html");
 ```
 
-### 24. <a name='FileDownload'></a>9. File Download
+### 24. 9. File Download
 
 [Example-code](https://github.com/itsyuimorii/Javaweb/blob/main/_07_Servlet/src/com/yuimorii/servlet/ServletDownloadDemo.java)
 
@@ -764,7 +716,7 @@ Implement the function of downloading a file in the browser with the following s
 - Read and write in a loop
 - Release the resource
 
-### 25. <a name='Howtosenddatabacktotheclient'></a>10. How to send data back to the client
+### 25.  10. How to send data back to the client
 
 ```java
 public class ResponseIOServlet extends HttpServlet {
@@ -779,7 +731,7 @@ public class ResponseIOServlet extends HttpServlet {
 
 # 🚀Section 6. HttpServletRequest
 
-### 26. <a name='Overview-1'></a>1. Overview
+### 26. 1. Overview
 
 Whenever a request comes into the Tomcat server, the Tomcat server will **parse the HTTP protocol information** and **encapsulate it in a Request object.** Then it is passed to the **service methods (doGet and doPost)** for us to use. We can get all the requested information through the HttpServletRequest object.
 
@@ -789,7 +741,7 @@ Whenever a request comes into the Tomcat server, the Tomcat server will **parse 
 
 - HttpServletRequest provides a number of methods for accessing the request message, such as **getting the** **request line, getting the request heade**r, etc.
 
-### 27. <a name='Relatedmethods'></a>2. Related methods
+### 27.2. Related methods
 
 #### 27.1. <a name='Getrequestlineinformation'></a>1. Get request line information
 
