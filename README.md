@@ -354,7 +354,7 @@ Modify the timing of Servlet creation: add <load-on-startup></load-on-startup> t
 
 # 🚀Section 2.ServletConfig
 
-### 7. Overview
+### Overview
 
 - ServletConfig is an **interface**
 
@@ -362,7 +362,7 @@ Modify the timing of Servlet creation: add <load-on-startup></load-on-startup> t
 
 - The configuration information encapsulated in ServletConfig is in the form of key-value pairsa) ServletConfig class three major roles
 
-### 8. ServletConfig configuration
+### ServletConfig configuration
 
 | Method                               | description                                                                |
 | ------------------------------------ | -------------------------------------------------------------------------- |
@@ -397,7 +397,7 @@ Modify the timing of Servlet creation: add <load-on-startup></load-on-startup> t
 
 ```
 
-### 9. <a name='ServletConfigfunction'></a>ServletConfig function
+### ServletConfig function
 
 - Get the value of servlet-name
 - Get the initialization parameter init-param
@@ -430,9 +430,9 @@ public class HelloServlet2 extends HttpServlet {
 
 # 🚀Section 3.ServletContext
 
-### 10.  1. Overview
+###  1. Overview
 
-#### 10.1.  a) What is ServletContext?
+#### a) What is ServletContext?
 
 - ServletContext is an interface
 
@@ -453,7 +453,7 @@ public class HelloServlet2 extends HttpServlet {
 | Put()          | Get()          | Remove()          |
 | setAttribute() | GetAttribute() | RemoveAttribute() |
 
-#### 10.2.  b) ServletContext class of the four roles
+####  b) ServletContext class of the four roles
 
 - to get the **web.xml configuration** of the context parameters context-param
 - to get the current project path, the format: **/ project path**
@@ -482,7 +482,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 }
 ```
 
-### 11. 2. ServletContext configuration
+### 2. ServletContext configuration
 
 - The <web-app> tag in the web.xml file is configured by the <context-param> tag, which has two sub-tags
 - Sub-tag <param-name> indicates the key of the global initialization parameter
@@ -499,7 +499,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 </context-param>
 ```
 
-### 12.  3. ServletContext configuration
+### ServletContext configuration
 
 Get the initialization parameters of the Web application
 
@@ -529,11 +529,11 @@ Get the initialization parameters of the Web application
 
 # 🚀Section 4: HTTP protocols
 
-### 13. 1. What is HTTP?
+### What is HTTP?
 
 The [Hypertext Transfer Protocol](https://reqbin.com/Article/HttpProtocol) (HTTP) is the core protocol of the World Wide Web. It is designed to support communication between a browser or an application and servers. HTTP protocol is used to send information in a format that both the client and the server can understand. HTTP works as a stateless request-response protocol between the client and the web server.
 
-### 14.  2. HTTP get/post request style
+### HTTP get/post request style
 
 - Request line:
 
@@ -598,11 +598,11 @@ Host: reqbin.com
   - **url** encoding is to replace the content parameter as: %xx%xx
   - **multipart/form-data**: indicates that the data is submitted to the server in the form of multipart (submitted as a stream, with sub-upload)
 
-### 15.  3. HTTP protocol format of the response
+### HTTP protocol format of the response
 
 # 🚀Section 5. HttpServletResponse
 
-### 16.  1. Overview
+### Overview
 
 - HttpServletResponse interface inherits from ServletResponse interface
 - Used to encapsulate the HTTP response message
@@ -616,7 +616,7 @@ Host: reqbin.com
 > CharacterStream
 > getWriter(); commonly used for passing back strings (commonly used)
 
-### 17.  2. HTTP Response Status Code Definition
+### HTTP Response Status Code Definition
 
 https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/302
 
@@ -631,7 +631,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/302
 | 405    | **the server knows the request method, but the target resource doesn't support this method**                                                                                                                         |
 |        |                                                                                                                                                                                                                      |
 
-### 18.  3. Methods for sending status codes
+### Methods for sending status codes
 
 - void setStatus(int status) , set the status code of the response message and generate the response status line
 
@@ -639,7 +639,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/302
 
 - void sendError(int sc,String message) , set the status code of the error and also send an error message to the client, which contains the content of message
 
-### 19. 4. methods for sending response message header
+### methods for sending response message header
 
 - void addHeader(String name,String value) , set the value of the name field specified in the response header, it will overwrite the original value of the name field
 
@@ -649,7 +649,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/302
 
 - void setContentType(String type) , set the type of the response content, that is, the value of Content-Type, and the response content for the text type can also specify the character set encoding, such as text/html;charset=UTF-8
 
-### 20. 5. Methods for sending the response message body
+### Methods for sending the response message body
 
 - ServletOutputStream getOutputStream(), used to get the byte output stream object
 
@@ -657,7 +657,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/302
 
 - Note: When using these output streams may appear garbled, so you can use resp.setContentType("text/html;UTF-8"); to set the character set encoding, used to solve the problem of garbled code
 
-### 21. 6. Request redirection
+### Request redirection
 
 Request redirection means that after **the server receives a request from the client, it may not be able to access the resource specified in the request due to certain conditions.**Let the client to access another specified resource
 
@@ -683,7 +683,7 @@ Second option for redirects (recommended):
 resp.sendRedirect("http://localhost:8080");
 ```
 
-### 22. 7. Set the cache time
+### Set the cache time
 
 For data that does not change frequently, you can **set the cache time to reduce frequent visits to the server and improve efficiency**
 Use **void setDateHeader(String name,long time)** method to set the response header
@@ -693,7 +693,7 @@ Example:
 resp.setDateHeader("Expires",System.currentTimeMills+16060*1000), set the cache time to 1 hour
 ```
 
-### 23. 8. Set timer refresh
+### Set timer refresh
 
 Timed refresh is to set a certain time to jump to a certain page automatically
 **Use void setHeader(String name,String value) method**
@@ -703,7 +703,7 @@ Example:
 resp.setHeader("Refresh", "3;URL=/virtual directory/demo.html");
 ```
 
-### 24. 9. File Download
+### File Download
 
 [Example-code](https://github.com/itsyuimorii/Javaweb/blob/main/_07_Servlet/src/com/yuimorii/servlet/ServletDownloadDemo.java)
 
@@ -716,7 +716,7 @@ Implement the function of downloading a file in the browser with the following s
 - Read and write in a loop
 - Release the resource
 
-### 25.  10. How to send data back to the client
+### How to send data back to the client
 
 ```java
 public class ResponseIOServlet extends HttpServlet {
@@ -731,7 +731,7 @@ public class ResponseIOServlet extends HttpServlet {
 
 # 🚀Section 6. HttpServletRequest
 
-### 26. 1. Overview
+### Overview
 
 Whenever a request comes into the Tomcat server, the Tomcat server will **parse the HTTP protocol information** and **encapsulate it in a Request object.** Then it is passed to the **service methods (doGet and doPost)** for us to use. We can get all the requested information through the HttpServletRequest object.
 
@@ -741,9 +741,9 @@ Whenever a request comes into the Tomcat server, the Tomcat server will **parse 
 
 - HttpServletRequest provides a number of methods for accessing the request message, such as **getting the** **request line, getting the request heade**r, etc.
 
-### 27.2. Related methods
+### Related methods
 
-#### 27.1. <a name='Getrequestlineinformation'></a>1. Get request line information
+#### Get request line information
 
 - **GetRequestURI()-**-Get the requested resource path
 
@@ -849,7 +849,7 @@ resp) throws ServletException, IOException {
 }
 ```
 
-#### 27.2. <a name='Methodsrelatedtoobtainingrequestheaderinformation'></a>2. Methods related to obtaining request header information
+#### Methods related to obtaining request header information
 
 - **String getHeader(String name)** , the role of the method is to get the value of the specified name field in the request header, if there is no such field, then return null, if there are multiple fields of the specified name, then return the value of the first field
 
@@ -861,7 +861,7 @@ resp) throws ServletException, IOException {
 
 - **long getDateHeaders(String name)**, this method gets the value of a specified request header field and converts it to a long integer representing the date/time, which is the millisecond value from January 1, 1970, 0:00 minutes and 0 seconds to the present 6. String getContentType(), get the value of the Content-Type field 7. int getContentLength(), get the value of the Content-Length field 8. String getCharacterEncoding(), get the character set of the entity part of the request message encoding, usually taken from the Content-Type field
 
-#### 27.3. <a name='Methodsrelatedtogettingrequestparameters'></a>3. Methods related to getting request parameters
+#### Methods related to getting request parameters
 
 - **String getParameter(String name)** --the method to get the parameter value of the specified name parameter, if there is no such parameter then return null, if the parameter does not set the value then return the empty string, if the parameter has more than one value then return the first
 
@@ -871,7 +871,7 @@ resp) throws ServletException, IOException {
 
 - **Map getParameterMap() **-- the parameter name and parameter values into a Map object to return
 
-### 28. <a name='HttpServletRequestsharedata'></a>3.HttpServletRequest share data
+### HttpServletRequest share data
 
 HttpServletRequest not only can get some column data, but also can share and pass some data through attributes, such as those used in request forwarding and request inclusion methods
 
@@ -887,7 +887,7 @@ HttpServletRequest not only can get some column data, but also can share and pas
 
    _Multipurpose Internet Mail Extensions_ (_MIME_) is an Internet standard that extends the format of email messages to support text in character sets other than ...
 
-### 29. <a name='Request.getRequestDispatchertest.jsp.forwordrequestresponse'></a>4.Request.getRequestDispatcher("/test.jsp").forword(request,response)
+### Request.getRequestDispatcher("/test.jsp").forword(request,response)
 
 Servlets can jump between each other, if the function of a Servlet can not handle the client's request then you can use the jump to **pass the request to another Servlet,** by another Servlet to complete and respond to the client
 
@@ -907,11 +907,11 @@ Servlets can jump between each other, if the function of a Servlet can not handl
 
 2. **void include(ServletRequest req, ServletResponse resp)**, this method is provided by RequestDispatcher, used to achieve the function of including another Servlet
 
-#### 29.1. <a name='RequestDispatcher.forwardvsRedirectionhttps:segmentfault.coma1190000038375532'></a>[‼️RequestDispatcher.forward vs Redirection](https://segmentfault.com/a/1190000038375532)
+#### <a name='RequestDispatcher.forwardvsRedirectionhttps:segmentfault.coma1190000038375532'></a>[‼️RequestDispatcher.forward vs Redirection](https://segmentfault.com/a/1190000038375532)
 
-#### 29.2. <a name='ServletforwardandsendRedirectMethodWithExamplehttps:www.geeksforgeeks.orgservlet-forward-and-sendredirect-method-with-example'></a>[‼️Servlet – forward() and sendRedirect() Method With Example](https://www.geeksforgeeks.org/servlet-forward-and-sendredirect-method-with-example/)
+####  <a name='ServletforwardandsendRedirectMethodWithExamplehttps:www.geeksforgeeks.orgservlet-forward-and-sendredirect-method-with-example'></a>[‼️Servlet – forward() and sendRedirect() Method With Example](https://www.geeksforgeeks.org/servlet-forward-and-sendredirect-method-with-example/)
 
-### 30. <a name='Streamingobjectstoobtaindata'></a>5. Streaming objects to obtain data
+### Streaming objects to obtain data
 
 - **BufferedReader getReader(),** the method to obtain a character input buffer stream
 - **ServletInputStream getInputStream(),** the method to get a byte input stream

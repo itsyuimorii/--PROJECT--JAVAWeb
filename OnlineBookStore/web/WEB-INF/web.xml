@@ -5,7 +5,7 @@
          version="4.0">
     <servlet>
         <servlet-name>OnlineBookStore</servlet-name>
-        <servlet-class>com.yuimorii.servlet.OnlineBookStore</servlet-class>
+        <servlet-class>com.yuimorii.servlet.onlineBookStore</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>OnlineBookStore</servlet-name>

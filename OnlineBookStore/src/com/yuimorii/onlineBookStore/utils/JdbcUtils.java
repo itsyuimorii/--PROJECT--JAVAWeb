@@ -1,4 +1,4 @@
-package com.atguigu.utils;
+package com.yuimorii.onlineBookStore.utils;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.pool.DruidDataSourceFactory;
@@ -30,13 +30,11 @@ public class JdbcUtils {
 
 
     /**
-     * 获取数据库连接池中的连接
+     * Retrieve connections in the database connection pool
      * @return 如果返回null,说明获取连接失败<br/>有值就是获取连接成功
      */
     public static Connection getConnection(){
-
         Connection conn = null;
-
         try {
             conn = dataSource.getConnection();
         } catch (Exception e) {
@@ -48,12 +46,12 @@ public class JdbcUtils {
 
     /**
      * 关闭连接，放回数据库连接池
-     * @param conn
+     * @param connection
      */
-    public static void close(Connection conn){
-        if (conn != null) {
+    public static void close(Connection connection){
+        if (connection != null) {
             try {
-                conn.close();
+                connection.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }

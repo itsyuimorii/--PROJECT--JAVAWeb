@@ -1,6 +1,7 @@
 package com.yuimorii.onlineBookStore.dao.impl;
 
-import com.atguigu.utils.JdbcUtils;
+import com.yuimorii.onlineBookStore.utils.JdbcUtils;
+
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
@@ -16,7 +17,6 @@ public abstract class BaseDao {
 
     /**
      * update() 方法用來執行， Insert\update\Delete語句
-     *
      * @return() 如果返回-1， 說明執行失敗，返回其他表示影響的行數
      */
     public int update(String sql, Object... args) {
@@ -30,9 +30,6 @@ public abstract class BaseDao {
         }
         return -1;
     }
-
-
-
 
     /**
      * 查询返回一个javaBean的sql语句
